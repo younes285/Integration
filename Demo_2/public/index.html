@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Resource Service · Demo 02</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a href="/" class="brand"><span class="brand-mark">R</span> Resource Lab</a><span class="eyebrow">INTEGRATION / DEMO 02</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow accent">GOOGLE WORKSPACE</p><h1>Your resources.<br>A connected experience.</h1><p class="subtitle">A small, working example of OAuth 2.0 authorization<br class="desktop"> with Google Drive as your resource service.</p></div>
+    <div id="message" role="status" aria-live="polite" hidden></div>
+    <section class="connection" aria-labelledby="connection-title">
+      <div class="service-icon" aria-hidden="true">G</div>
+      <div class="connection-copy"><div class="title-line"><h2 id="connection-title">Google Drive</h2><span id="status" class="badge">Loading</span></div><p id="connection-description">Checking your connection…</p></div>
+      <div class="actions"><a id="connect" class="button primary" href="/auth/google" hidden>Connect Google <span aria-hidden="true">↗</span></a><button id="sample" class="button secondary" hidden>Try sample data</button><button id="disconnect" class="button secondary" hidden>Disconnect & revoke</button></div>
+    </section>
+    <section id="setup" class="setup" hidden><strong>Set up your Google connection</strong><p>Create a Google Cloud OAuth web client, enable the Drive API, and add your client ID and secret to <code>.env</code>. Restart the server when ready.</p><p>Authorized redirect URI: <code id="redirect-uri"></code></p><p>Follow the full instructions in <code>README.md</code>. You can try the sample data below without credentials.</p></section>
+    <div class="content-grid">
+      <section class="resources" aria-labelledby="resource-title"><div class="section-heading"><div><p class="eyebrow">RESOURCE EXPLORER</p><h2 id="resource-title">Drive files <span id="count"></span></h2></div><button id="refresh" class="button small" disabled>Refresh</button></div>
+        <div id="empty" class="empty"><span aria-hidden="true" class="empty-icon">↗</span><h3>A connection opens the door.</h3><p>Connect your Google account to view file metadata,<br>or explore the demo with fictional sample files.</p></div>
+        <div id="file-container" class="table-wrap" hidden><table><thead><tr><th>Name</th><th>Type</th><th>Modified</th></tr></thead><tbody id="files"></tbody></table></div>
+        <button id="load-more" class="button small more" hidden>Load more files</button>
+        <div class="resource-footer"><span class="dot"></span><span id="resource-note">Metadata only · Read-only access</span></div>
+      </section>
+      <aside class="details"><p class="eyebrow">BEHIND THE CONNECTION</p><h2>One flow. Three roles.</h2><ol class="flow"><li><span>01</span><div><strong>This application</strong><p>The OAuth client requests permission to read your file metadata.</p></div></li><li><span>02</span><div><strong>Google authorization</strong><p>You grant access. The server exchanges the code for an access token.</p></div></li><li><span>03</span><div><strong>Google Drive API</strong><p>The resource service returns files when presented with a valid bearer token.</p></div></li></ol><div class="scope"><p class="eyebrow">REQUESTED SCOPE</p><code>drive.metadata.readonly</code><p>View file names, types, and dates. File contents cannot be read or changed with this scope.</p></div><p id="token-status" class="token-status">Tokens stay on the server.</p></aside>
+    </div>
+    <footer><span>Built to explore. Ready to connect.</span><span>OAuth 2.0 · Authorization Code Flow</span></footer>
+  </main>
+</body>
+</html>

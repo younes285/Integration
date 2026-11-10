@@ -1,0 +1,16 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+client_secret*.json
+credentials.json
+service-account*.json
+token.json
+tokens.json
+
+# Dependencies and generated files
+node_modules/
+coverage/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+client_secret*.json
+credentials.json
+service-account*.json
+token.json
+tokens.json
+node_modules/
+coverage/
+*.log
