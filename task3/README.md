@@ -1,4 +1,4 @@
-# Demo 2 — Google as a Resource Service
+# Task 3 — Google as a Resource Service
 
 A runnable Node.js integration demo that uses **Google Drive API v3 as the resource service** (OAuth resource server). Google OAuth handles authorization; this project is the client. The client requests read-only file metadata, keeps tokens on the backend, and lists files through a small dashboard.
 
@@ -7,7 +7,7 @@ A runnable Node.js integration demo that uses **Google Drive API v3 as the resou
 Requires Node.js 20.12 or later. There are no third-party dependencies and no install step.
 
 ```powershell
-cd Demo_2
+cd task3
 npm start
 ```
 
@@ -93,7 +93,7 @@ Tests use a real local HTTP server and stub only the Google network calls. They 
 ## Project layout
 
 ```text
-Demo_2/
+task3/
   .env.example          Local configuration template
   package.json          Run, watch, and test commands
   public/               Dashboard HTML, CSS, and JavaScript

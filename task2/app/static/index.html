@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Identity Lab | Sign in</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <p id="status" role="status" aria-live="polite">Checking your session...</p>
+    <p id="error" role="alert" hidden></p>
+    <section id="login" class="card" aria-labelledby="login-title" hidden>
+      <div class="login-brand"><span class="brand-icon" aria-hidden="true">IL</span><span>Identity Lab</span></div>
+      <h1 id="login-title">Welcome back</h1>
+      <p class="login-description">Sign in to access your account.</p>
+      <div id="google-button" aria-label="Sign in with Google"></div>
+      <p class="login-note">Use your Google account to continue securely.</p>
+      <div class="login-footer"><span class="security-dot" aria-hidden="true"></span> Your password stays with Google</div>
+    </section>
+    <section id="dashboard" hidden>
+      <article class="card">
+        <div class="section-title"><h2>My account</h2><button id="logout" class="secondary">Sign out</button></div>
+        <div class="profile">
+          <img id="picture" alt="Your Google profile" hidden referrerpolicy="no-referrer">
+          <div><h3 id="name"></h3><p id="email"></p><span id="role" class="badge"></span></div>
+        </div>
+        <div class="actions">
+          <button id="protected">Test user endpoint</button>
+          <button id="test-admin" class="secondary">Test admin access</button>
+        </div>
+        <p id="protected-result" class="result" role="status" hidden></p>
+        <p id="admin-result" class="result" role="status" hidden></p>
+      </article>
+      <section id="admin" class="card" hidden>
+        <div class="section-title"><h2>Registered users</h2><button id="refresh-users" class="secondary">Refresh users</button></div>
+        <div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr></thead><tbody id="users"></tbody></table></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
