@@ -6,6 +6,7 @@ Sample projects for exploring Google identity and resource-service integrations.
 | --- | --- | --- | --- |
 | Task 2 | Google Identity Provider with role-based access control | Python / FastAPI / SQLite | [task2/README.md](./task2/README.md) |
 | Task 3 | Google Drive as a Resource Service | Node.js / OAuth 2.0 | [task3/README.md](./task3/README.md) |
+| MCP | Google SSO with MCP and Jira | Python / MCP / Jira Cloud | [task_mcp/README.md](./task_mcp/README.md) |
 
 ## Task 2: Google Identity Provider with RBAC
 
@@ -34,3 +35,9 @@ Run the integration tests from `task3`:
 ```powershell
 npm test
 ```
+
+## Google SSO + MCP + Jira
+
+[task_mcp](./task_mcp) signs users in with Google and connects to Jira through an MCP server with role-based permissions. Follow its [setup instructions](./task_mcp/README.md) to configure Google and Jira credentials and start the servers.
+
+The project was copied unchanged from [komayl-dbouk/sso-mcp](https://github.com/komayl-dbouk/sso-mcp), commit `f6436b461f641dcc0849ab0ecf4dc98dfba69c0d`. The original code and documentation are preserved.
